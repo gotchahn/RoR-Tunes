@@ -1,0 +1,22 @@
+- if songs.any?
+  %h2 Canciones
+
+  %table{border:"1"}
+    %tr
+      %th Titulo
+      %th Duracion
+      %th Musica y Letra por
+      %th
+
+    = render songs
+    %tr
+      %td
+        %strong Duracion Total
+      %td= sum_of_songs_duration(songs)
+      %td
+      %td
+  %br
+  %strong= songs.count
+  Cancion(es) Agregadas
+- else
+  %em Aun no tiene canciones

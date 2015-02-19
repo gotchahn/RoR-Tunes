@@ -1,0 +1,15 @@
+- if flash[:notice].present?
+  .notice= flash[:notice]
+
+%h1= "#{@album.title} by #{@album.singer.name}"
+
+%p
+  %strong Precio
+  = @album.price
+%p
+  %strong Productor
+  = @album.production_label
+
+= render partial: "songs", locals: { songs: @album.songs }
+
+%p= link_to "Nueva Cancion", new_album_song_path(@album)

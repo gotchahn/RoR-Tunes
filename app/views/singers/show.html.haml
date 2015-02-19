@@ -1,0 +1,13 @@
+%h1= @singer.name
+%p
+  %strong Genero
+  = @singer.gender
+%p
+  %strong Twitter
+  = @singer.twitter
+%p
+  %strong Tipo de Cantante
+  = @singer.singer_type
+
+
+= link_to "Editar Cantante", edit_singer_path

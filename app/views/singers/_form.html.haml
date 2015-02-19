@@ -1,0 +1,37 @@
+
+= form_for @singer do |f|
+
+  .field
+    = f.label :name, "Nombre"
+    = f.text_field :name
+
+  .field
+    = f.label :gender, "Genero"
+    = f.select :gender, Singer.gender_options
+
+
+  .field
+    = f.label :twitter
+    = f.text_field :twitter
+
+  .field
+    %h2 Tipo de Musica
+
+    = f.radio_button :singer_type, "POP"
+    = f.label :singer_type, "POP"
+    %br
+    = f.radio_button :singer_type, "ROCK"
+    = f.label :singer_type, "ROCK"
+    %br
+    = f.radio_button :singer_type, "COUNTRY"
+    = f.label :singer_type, "COUNTRY"
+    %br
+    = f.radio_button :singer_type, "R&B"
+    = f.label :singer_type, "R&B"
+    %br
+    = f.radio_button :singer_type, "RAP"
+    = f.label :singer_type, "RAP"
+
+
+  .field
+    = f.submit
