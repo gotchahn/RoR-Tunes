@@ -1,0 +1,13 @@
+
+= form_for @album do |f|
+  %table{border: "1"}
+    %tr
+      %th Titulo
+      %th Duracion
+      %th Musica y Letra
+    = f.fields_for :songs do |fsong|
+      %tr
+        %td= fsong.text_field :title
+        %td= fsong.number_field :duration
+        %td= fsong.text_field :music_and_lyrincs_by
+  = f.submit

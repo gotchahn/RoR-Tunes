@@ -4,4 +4,6 @@ class Album < ActiveRecord::Base
 
   belongs_to :singer
   has_many :songs
+
+  accepts_nested_attributes_for :songs, reject_if: :all_blank
 end

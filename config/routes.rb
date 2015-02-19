@@ -4,8 +4,9 @@ ExamenRoR1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :singers, except: [:destroy]
-  resources :albums, except: [:edit, :update, :destroy] do
+  resources :albums, except: [:edit, :destroy] do
     resources :songs, only: [:new, :create, :destroy]
+    get "songs_batch", on: :member
   end
 
   root 'home#index'

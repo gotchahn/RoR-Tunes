@@ -22,9 +22,22 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def update
+    @album = Album.find(params[:id])
+
+    if @album.update(album_params)
+      redirect_to @album
+    else
+      render :songs_batch
+    end
+  end
+
   def album_params
     params.require(:album).permit!
   end
 
+  def songs_batch
+    @album = Album.find(params[:id])
+  end
 
 end

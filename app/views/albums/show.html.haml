@@ -13,3 +13,4 @@
 = render partial: "songs", locals: { songs: @album.songs }
 
 %p= link_to "Nueva Cancion", new_album_song_path(@album)
+%p= link_to "Editar Songs", songs_batch_album_path(@album)
